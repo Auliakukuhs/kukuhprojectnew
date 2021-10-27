@@ -1,0 +1,33 @@
+﻿<h1>Employees</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Employees</a>
+<div class="container">
+  <div class="card m-5 p-3">
+    <div class="card-body">
+      <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Group</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.group}}</td>
+          <td style="white-space: nowrap">
+            <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+            <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+              <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+              <span *ngIf="!user.isDeleting">Delete</span>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

@@ -31,9 +31,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "angular-crud-example"
+  "defaultProject": "angular-crud-example",
+  "cli": {
+    "analytics": "f5486bbe-3f75-460c-be6c-5d2ee0cf23b8"
+  }
 }

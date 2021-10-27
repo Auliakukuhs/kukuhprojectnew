@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
 import { User } from '@app/_models';
 
-const baseUrl = `${environment.apiUrl}/users`;
+const baseUrl = `${environment.apiUrl}/employees`;
 
 @Injectable({ providedIn: 'root' })
 export class UserService {

@@ -1,11 +1,16 @@
-﻿import { Role } from './role';
+﻿import {Role} from './role';
+import {Moment} from 'moment';
 
 export class User {
-    id!: string;
-    title!: string;
-    firstName!: string;
-    lastName!: string;
-    email!: string;
-    role!: Role;
-    isDeleting: boolean = false;
+  id!: string;
+  username!: string;
+  firstName!: string;
+  lastName!: string;
+  email!: string;
+  birthDate!: Moment;
+  basicSalary: number | undefined;
+  status: string | undefined;
+  group!: string;
+  description: string | undefined;
+  isDeleting = false;
 }

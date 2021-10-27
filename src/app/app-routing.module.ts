@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { AuthGuard } from './_helpers';
 
-const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
+const employeesModule = () => import('./employees/employees.module').then(x => x.EmployeesModule);
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'users', loadChildren: usersModule },
-
+    { path: 'employees', loadChildren: employeesModule, canActivate: [AuthGuard]  },
+    { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({
